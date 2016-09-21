@@ -1,0 +1,6 @@
+# basemap (can be installed by conda only, but not pip)
+geographiclib
+requests
+isodate
+pandas
+flask

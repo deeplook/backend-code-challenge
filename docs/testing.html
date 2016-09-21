@@ -1,0 +1,740 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.12: http://docutils.sourceforge.net/" />
+<title>Performance Testing</title>
+<style type="text/css">
+
+/*
+:Author: David Goodger (goodger@python.org)
+:Id: $Id: html4css1.css 7614 2013-02-21 15:55:51Z milde $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "! important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 ! important }
+
+.first {
+  /* Override more specific margin styles with "! important". */
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+object[type="image/svg+xml"], object[type="application/x-shockwave-flash"] {
+  overflow: hidden;
+}
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title, .code .error {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin: 0 0 0.5em 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left, .figure.align-left, object.align-left {
+  clear: left ;
+  float: left ;
+  margin-right: 1em }
+
+img.align-right, .figure.align-right, object.align-right {
+  clear: right ;
+  float: right ;
+  margin-left: 1em }
+
+img.align-center, .figure.align-center, object.align-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.align-left {
+  text-align: left }
+
+.align-center {
+  clear: both ;
+  text-align: center }
+
+.align-right {
+  text-align: right }
+
+/* reset inner alignment in figures */
+div.align-right {
+  text-align: inherit }
+
+/* div.align-center * { */
+/*   text-align: left } */
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font: inherit }
+
+pre.literal-block, pre.doctest-block, pre.math, pre.code {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+pre.code .ln { color: grey; } /* line numbers */
+pre.code, code { background-color: #eeeeee }
+pre.code .comment, code .comment { color: #5C6576 }
+pre.code .keyword, code .keyword { color: #3B0D06; font-weight: bold }
+pre.code .literal.string, code .literal.string { color: #0C5404 }
+pre.code .name.builtin, code .name.builtin { color: #352B84 }
+pre.code .deleted, code .deleted { background-color: #DEB0A1}
+pre.code .inserted, code .inserted { background-color: #A3D289}
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+/* "booktabs" style (no vertical lines) */
+table.docutils.booktabs {
+  border: 0px;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  border-collapse: collapse;
+}
+table.docutils.booktabs * {
+  border: 0px;
+}
+table.docutils.booktabs th {
+  border-bottom: thin solid;
+  text-align: left;
+}
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+ul.auto-toc {
+  list-style-type: none }
+
+</style>
+</head>
+<body>
+<div class="document" id="performance-testing">
+<h1 class="title">Performance Testing</h1>
+
+<p>This describes only performance tests of the desired API endpoint. The goal is to run a load test and benchmark how many concurrent requests this code can handle reliably without starting to return errors. Ideally, this should be at least 1000 concurrent requests.</p>
+<div class="section" id="preparation">
+<h1>Preparation</h1>
+<p>For these tests a popular tool named <tt class="docutils literal">siege</tt> is used, see <a class="reference external" href="https://www.joedog.org/siege-home/">https://www.joedog.org/siege-home/</a> for installation procedure. On Mac OS X it can be conveniently installed using <tt class="docutils literal">brew install siege</tt>.</p>
+<p>Siege comes with its own configuration settings in the directory <tt class="docutils literal"><span class="pre">~/.siege/</span></tt>. It runs load tests by sending requests (concurrently and/or repeatedly) to a website, and has a default limit of 255 concurrent users. So, for these tests you must change in <tt class="docutils literal"><span class="pre">~/.siege/siege.conf</span></tt> the variable <tt class="docutils literal">limit</tt> to something around 1000, like 1023. (For even higher numbers you might have to change process-related parameters of the operating system, too.)</p>
+<p>A sample run of <tt class="docutils literal">siege</tt> for GET requests on google.com would look like below. Notice, that if you do this with high numbers of concurrent users (<tt class="docutils literal"><span class="pre">-c</span></tt>) and/or repetitions (<tt class="docutils literal"><span class="pre">-r</span></tt>) you might find you IP blocked by Google, very soon!</p>
+<pre class="code bash literal-block">
+$ siege -c5 -r2 <span class="literal string double">&quot;http://www.google.com/&quot;</span>
+** SIEGE 4.0.2
+** Preparing <span class="literal number">5</span> concurrent users <span class="keyword">for</span> battle.
+The server is now under siege...
+HTTP/1.1 <span class="literal number">302</span>     0.06 secs:     <span class="literal number">258</span> <span class="name variable">bytes</span> <span class="operator">==</span>&gt; GET  /
+HTTP/1.1 <span class="literal number">302</span>     0.06 secs:     <span class="literal number">258</span> <span class="name variable">bytes</span> <span class="operator">==</span>&gt; GET  /
+HTTP/1.1 <span class="literal number">302</span>     0.07 secs:     <span class="literal number">258</span> <span class="name variable">bytes</span> <span class="operator">==</span>&gt; GET  /
+HTTP/1.1 <span class="literal number">302</span>     0.07 secs:     <span class="literal number">258</span> <span class="name variable">bytes</span> <span class="operator">==</span>&gt; GET  /
+HTTP/1.1 <span class="literal number">302</span>     0.07 secs:     <span class="literal number">258</span> <span class="name variable">bytes</span> <span class="operator">==</span>&gt; GET  /
+HTTP/1.1 <span class="literal number">200</span>     0.15 secs:   <span class="literal number">45040</span> <span class="name variable">bytes</span> <span class="operator">==</span>&gt; GET  /?gfe_rd<span class="operator">=</span>cr<span class="punctuation">&amp;</span><span class="name variable">ei</span><span class="operator">=</span>QTDNV6WrIKuK8Qe6y6K4Bw
+HTTP/1.1 <span class="literal number">200</span>     0.17 secs:   <span class="literal number">45038</span> <span class="name variable">bytes</span> <span class="operator">==</span>&gt; GET  /?gfe_rd<span class="operator">=</span>cr<span class="punctuation">&amp;</span><span class="name variable">ei</span><span class="operator">=</span>QTDNV-ejIKyK8QfU_LLwDQ
+HTTP/1.1 <span class="literal number">200</span>     0.17 secs:   <span class="literal number">45074</span> <span class="name variable">bytes</span> <span class="operator">==</span>&gt; GET  /?gfe_rd<span class="operator">=</span>cr<span class="punctuation">&amp;</span><span class="name variable">ei</span><span class="operator">=</span>QTDNV4GlIKmK8Qe0z6nwCA
+HTTP/1.1 <span class="literal number">200</span>     0.17 secs:   <span class="literal number">45088</span> <span class="name variable">bytes</span> <span class="operator">==</span>&gt; GET  /?gfe_rd<span class="operator">=</span>cr<span class="punctuation">&amp;</span><span class="name variable">ei</span><span class="operator">=</span>QTDNV5OpIKaK8QelrYCwBQ
+HTTP/1.1 <span class="literal number">200</span>     0.19 secs:   <span class="literal number">45047</span> <span class="name variable">bytes</span> <span class="operator">==</span>&gt; GET  /?gfe_rd<span class="operator">=</span>cr<span class="punctuation">&amp;</span><span class="name variable">ei</span><span class="operator">=</span>QTDNV_qoIKuK8Qe6y6K4Bw
+HTTP/1.1 <span class="literal number">302</span>     0.06 secs:     <span class="literal number">258</span> <span class="name variable">bytes</span> <span class="operator">==</span>&gt; GET  /
+HTTP/1.1 <span class="literal number">200</span>     0.16 secs:   <span class="literal number">45040</span> <span class="name variable">bytes</span> <span class="operator">==</span>&gt; GET  /?gfe_rd<span class="operator">=</span>cr<span class="punctuation">&amp;</span><span class="name variable">ei</span><span class="operator">=</span>QTDNV-rOLamK8Qe0z6nwCA
+HTTP/1.1 <span class="literal number">302</span>     0.06 secs:     <span class="literal number">258</span> <span class="name variable">bytes</span> <span class="operator">==</span>&gt; GET  /
+HTTP/1.1 <span class="literal number">200</span>     0.16 secs:   <span class="literal number">45074</span> <span class="name variable">bytes</span> <span class="operator">==</span>&gt; GET  /?gfe_rd<span class="operator">=</span>cr<span class="punctuation">&amp;</span><span class="name variable">ei</span><span class="operator">=</span>QTDNV7XpN6yK8QfU_LLwDQ
+HTTP/1.1 <span class="literal number">302</span>     0.05 secs:     <span class="literal number">258</span> <span class="name variable">bytes</span> <span class="operator">==</span>&gt; GET  /
+HTTP/1.1 <span class="literal number">302</span>     0.06 secs:     <span class="literal number">258</span> <span class="name variable">bytes</span> <span class="operator">==</span>&gt; GET  /
+HTTP/1.1 <span class="literal number">302</span>     0.08 secs:     <span class="literal number">258</span> <span class="name variable">bytes</span> <span class="operator">==</span>&gt; GET  /
+HTTP/1.1 <span class="literal number">200</span>     0.15 secs:   <span class="literal number">45035</span> <span class="name variable">bytes</span> <span class="operator">==</span>&gt; GET  /?gfe_rd<span class="operator">=</span>cr<span class="punctuation">&amp;</span><span class="name variable">ei</span><span class="operator">=</span>QjDNV8f7B6uK8Qe6y6K4Bw
+HTTP/1.1 <span class="literal number">200</span>     0.17 secs:   <span class="literal number">45085</span> <span class="name variable">bytes</span> <span class="operator">==</span>&gt; GET  /?gfe_rd<span class="operator">=</span>cr<span class="punctuation">&amp;</span><span class="name variable">ei</span><span class="operator">=</span>QjDNV8-7DKyK8QfU_LLwDQ
+HTTP/1.1 <span class="literal number">200</span>     0.17 secs:   <span class="literal number">45046</span> <span class="name variable">bytes</span> <span class="operator">==</span>&gt; GET  /?gfe_rd<span class="operator">=</span>cr<span class="punctuation">&amp;</span><span class="name variable">ei</span><span class="operator">=</span>QjDNV46OD6OK8Qfrz4eoDg
+
+Transactions:                 <span class="literal number">20</span> hits
+Availability:             100.00 %
+Elapsed time:               1.27 secs
+Data transferred:               0.43 MB
+Response time:              0.12 secs
+Transaction rate:              15.75 trans/sec
+Throughput:                 0.34 MB/sec
+Concurrency:                1.81
+Successful transactions:          20
+Failed transactions:               0
+Longest transaction:            0.19
+Shortest transaction:           0.05
+</pre>
+<p>Appologies for the non-aligned values in the second column of the results... For brevity, all further invocations of <tt class="docutils literal">siege</tt> in the Snowdonia context will not list any single requests made.</p>
+<p>Since providing URLs on the command-line can be laborious and error-prone, <tt class="docutils literal">siege</tt> also accepts them from a separate file, so the above example could be also executed like this (with single requests removed from the output):</p>
+<pre class="code bash literal-block">
+$ cat urls.txt
+http://www.google.com/
+
+$ siege -c5 -r2 -f urls.txt &gt; out.txt
+** SIEGE 4.0.2
+** Preparing <span class="literal number">5</span> concurrent users <span class="keyword">for</span> battle.
+The server is now under siege...
+
+Transactions:                 <span class="literal number">20</span> hits
+Availability:             100.00 %
+Elapsed time:               1.23 secs
+Data transferred:               0.43 MB
+Response time:              0.13 secs
+Transaction rate:              16.26 trans/sec
+Throughput:                 0.35 MB/sec
+Concurrency:                2.07
+Successful transactions:          20
+Failed transactions:               0
+Longest transaction:            0.20
+Shortest transaction:           0.05
+</pre>
+</div>
+<div class="section" id="local-test-results">
+<h1>Local Test Results</h1>
+<p>In this section the implemented microservice is tested while running locally on a development machine (in this case a MacBook Pro running Mac OS X). Before you reproduce these tests, please make sure, you have a database and the service is running locally (see the other document named Manual)! Also, the debug value in <tt class="docutils literal">config.ini</tt> is set to <tt class="docutils literal">False</tt>.</p>
+<p>Without loss of generality, and because only the performance needs to be tested, all further test runs use the same location data to be posted, including a vehicle UID, <tt class="docutils literal"><span class="pre">11111111-1111-1111-1111-111111111111</span></tt>, easy to spot in the database if needed.</p>
+<p>Since the vehicles send data only once every 20 seconds the tests can vary the number of concurrent requests, and let the number of repetitions at one.</p>
+<pre class="code bash literal-block">
+$ cat urls.txt
+http://localhost:5000/data POST <span class="name variable">uid</span><span class="operator">=</span>00000000-0000-0000-0000-000000000000<span class="punctuation">&amp;</span><span class="name variable">type</span><span class="operator">=</span>bus<span class="punctuation">&amp;</span><span class="name variable">timestamp</span><span class="operator">=</span>1472716308.602317<span class="punctuation">&amp;</span><span class="name variable">longitude</span><span class="operator">=</span>13.383333<span class="punctuation">&amp;</span><span class="name variable">lattitude</span><span class="operator">=</span>52.516667<span class="punctuation">&amp;</span><span class="name variable">heading</span><span class="operator">=</span>42
+
+$ siege -c100 -r1 -f urls.txt &gt; out.txt
+** SIEGE 4.0.2
+** Preparing <span class="literal number">100</span> concurrent users <span class="keyword">for</span> battle.
+The server is now under siege...
+
+Transactions:                <span class="literal number">100</span> hits
+Availability:             100.00 %
+Elapsed time:               0.67 secs
+Data transferred:               0.00 MB
+Response time:              0.10 secs
+Transaction rate:             149.25 trans/sec
+Throughput:                 0.00 MB/sec
+Concurrency:               15.13
+Successful transactions:         100
+Failed transactions:               0
+Longest transaction:            0.19
+Shortest transaction:           0.01
+
+$ siege -c500 -r1 -f urls.txt &gt; out.txt
+** SIEGE 4.0.2
+** Preparing <span class="literal number">500</span> concurrent users <span class="keyword">for</span> battle.
+The server is now under siege...
+
+Transactions:                <span class="literal number">500</span> hits
+Availability:             100.00 %
+Elapsed time:               2.21 secs
+Data transferred:               0.00 MB
+Response time:              0.01 secs
+Transaction rate:             226.24 trans/sec
+Throughput:                 0.00 MB/sec
+Concurrency:                1.18
+Successful transactions:         500
+Failed transactions:               0
+Longest transaction:            0.03
+Shortest transaction:           0.00
+
+$ siege -c1000 -r1 -f urls.txt &gt; out.txt
+** SIEGE 4.0.2
+** Preparing <span class="literal number">1000</span> concurrent users <span class="keyword">for</span> battle.
+The server is now under siege...
+
+Transactions:               <span class="literal number">1000</span> hits
+Availability:             100.00 %
+Elapsed time:              12.79 secs
+Data transferred:               0.00 MB
+Response time:              0.00 secs
+Transaction rate:              78.19 trans/sec
+Throughput:                 0.00 MB/sec
+Concurrency:                0.24
+Successful transactions:        1000
+Failed transactions:               0
+Longest transaction:            0.04
+Shortest transaction:           0.00
+</pre>
+<p>When increasing the number of repetitions, errors start appearing at five repeated requests per 1000 concurrent users:</p>
+<pre class="code bash literal-block">
+$ cat urls.txt
+http://localhost:5000/data POST <span class="name variable">uid</span><span class="operator">=</span>00000000-0000-0000-0000-000000000000<span class="punctuation">&amp;</span><span class="name variable">type</span><span class="operator">=</span>bus<span class="punctuation">&amp;</span><span class="name variable">timestamp</span><span class="operator">=</span>1472716308.602317<span class="punctuation">&amp;</span><span class="name variable">longitude</span><span class="operator">=</span>13.383333<span class="punctuation">&amp;</span><span class="name variable">lattitude</span><span class="operator">=</span>52.516667<span class="punctuation">&amp;</span><span class="name variable">heading</span><span class="operator">=</span>42
+
+$ siege -c1000 -r4 -f urls.txt &gt; out.txt
+** SIEGE 4.0.2
+** Preparing <span class="literal number">1000</span> concurrent users <span class="keyword">for</span> battle.
+The server is now under siege...
+
+Transactions:               <span class="literal number">4000</span> hits
+Availability:             100.00 %
+Elapsed time:              13.79 secs
+Data transferred:               0.02 MB
+Response time:              0.07 secs
+Transaction rate:             290.07 trans/sec
+Throughput:                 0.00 MB/sec
+Concurrency:               20.62
+Successful transactions:        4000
+Failed transactions:               0
+Longest transaction:            0.24
+Shortest transaction:           0.00
+
+$ siege -c1000 -r5 -f urls.txt &gt; out.txt
+** SIEGE 4.0.2
+** Preparing <span class="literal number">1000</span> concurrent users <span class="keyword">for</span> battle.
+The server is now under siege...
+<span class="operator">[</span>error<span class="operator">]</span> unable to write to socket sock.c:637: Broken pipe
+<span class="operator">[</span>error<span class="operator">]</span> socket: <span class="name builtin">read</span> error Connection reset by peer sock.c:539: Connection reset by peer
+<span class="operator">[</span>error<span class="operator">]</span> unable to write to socket sock.c:637: Broken pipe
+
+Transactions:               <span class="literal number">4997</span> hits
+Availability:              99.94 %
+Elapsed time:              14.33 secs
+Data transferred:               0.02 MB
+Response time:              0.13 secs
+Transaction rate:             348.71 trans/sec
+Throughput:                 0.00 MB/sec
+Concurrency:               45.09
+Successful transactions:        4997
+Failed transactions:               3
+Longest transaction:            0.43
+Shortest transaction:           0.00
+</pre>
+<p>For comparison, these are a few tests with a GET endpoint, returning the string <tt class="docutils literal">done</tt> and doing nothing else. Here errors start appearing at 10 repetitions:</p>
+<pre class="code bash literal-block">
+$ siege -c1000 -r10 <span class="literal string double">&quot;http://localhost:5000/simple&quot;</span> &gt; out.txt
+** SIEGE 4.0.2
+** Preparing <span class="literal number">1000</span> concurrent users <span class="keyword">for</span> battle.
+The server is now under siege...
+
+Transactions:              <span class="literal number">10000</span> hits
+Availability:             100.00 %
+Elapsed time:              14.69 secs
+Data transferred:               0.04 MB
+Response time:              0.03 secs
+Transaction rate:             680.74 trans/sec
+Throughput:                 0.00 MB/sec
+Concurrency:               18.67
+Successful transactions:       10000
+Failed transactions:               0
+Longest transaction:            0.13
+Shortest transaction:           0.00
+
+$ siege -c1000 -r10 <span class="literal string double">&quot;http://localhost:5000/simple&quot;</span> &gt; out.txt
+** SIEGE 4.0.2
+** Preparing <span class="literal number">1000</span> concurrent users <span class="keyword">for</span> battle.
+The server is now under siege...
+<span class="operator">[</span>error<span class="operator">]</span> socket: <span class="name builtin">read</span> error Connection reset by peer sock.c:539: Connection reset by peer
+<span class="operator">[</span>error<span class="operator">]</span> socket: <span class="name builtin">read</span> error Connection reset by peer sock.c:539: Connection reset by peer
+<span class="operator">[</span>error<span class="operator">]</span> socket: <span class="name builtin">read</span> error Connection reset by peer sock.c:539: Connection reset by peer
+<span class="operator">[</span>error<span class="operator">]</span> socket: <span class="name builtin">read</span> error Connection reset by peer sock.c:539: Connection reset by peer
+...
+<span class="operator">[</span>error<span class="operator">]</span> unable to write to socket sock.c:637: Broken pipe
+<span class="operator">[</span>error<span class="operator">]</span> unable to write to socket sock.c:637: Broken pipe
+<span class="operator">[</span>error<span class="operator">]</span> unable to write to socket sock.c:637: Broken pipe
+<span class="operator">[</span>error<span class="operator">]</span> unable to write to socket sock.c:637: Broken pipe
+
+Transactions:               <span class="literal number">9966</span> hits
+Availability:              99.66 %
+Elapsed time:              14.21 secs
+Data transferred:               0.04 MB
+Response time:              0.03 secs
+Transaction rate:             701.34 trans/sec
+Throughput:                 0.00 MB/sec
+Concurrency:               24.53
+Successful transactions:        9966
+Failed transactions:              34
+Longest transaction:            4.10
+Shortest transaction:           0.00
+</pre>
+</div>
+<div class="section" id="remote-test-results">
+<h1>Remote Test Results</h1>
+<p>In this section the same tests are performed on a remote AWS EC2 instance, run from a local <tt class="docutils literal">siege</tt>, which is the most expected use case (running <tt class="docutils literal">siege</tt> on the remote instance, too, would rather not be the normal use case).</p>
+<p>So, to reproduce these tests, you need to have a remote instance created and all software fully deployed to it, and the service itself started (see the other document named Manual). Note that the IP address for the remote server in the <tt class="docutils literal">urls.txt</tt> file will most likely be different for your instance!</p>
+<pre class="code bash literal-block">
+$ cat urls.txt
+http://52.57.59.147:5000/data POST <span class="name variable">uid</span><span class="operator">=</span>00000000-0000-0000-0000-000000000000<span class="punctuation">&amp;</span><span class="name variable">type</span><span class="operator">=</span>bus<span class="punctuation">&amp;</span><span class="name variable">timestamp</span><span class="operator">=</span>1472716308.602317<span class="punctuation">&amp;</span><span class="name variable">longitude</span><span class="operator">=</span>13.383333<span class="punctuation">&amp;</span><span class="name variable">lattitude</span><span class="operator">=</span>52.516667<span class="punctuation">&amp;</span><span class="name variable">heading</span><span class="operator">=</span>42
+
+$ siege -c1000 -r1 -f urls.txt &gt; out.txt
+** SIEGE 4.0.2
+** Preparing <span class="literal number">1000</span> concurrent users <span class="keyword">for</span> battle.
+The server is now under siege...
+
+Transactions:               <span class="literal number">1000</span> hits
+Availability:             100.00 %
+Elapsed time:              12.65 secs
+Data transferred:               0.00 MB
+Response time:              0.07 secs
+Transaction rate:              79.05 trans/sec
+Throughput:                 0.00 MB/sec
+Concurrency:                5.88
+Successful transactions:        1000
+Failed transactions:               0
+Longest transaction:            0.11
+Shortest transaction:           0.06
+
+$ siege -c1000 -r2 -f urls.txt &gt; out.txt
+** SIEGE 4.0.2
+** Preparing <span class="literal number">1000</span> concurrent users <span class="keyword">for</span> battle.
+The server is now under siege...
+
+Transactions:               <span class="literal number">2000</span> hits
+Availability:             100.00 %
+Elapsed time:              13.12 secs
+Data transferred:               0.01 MB
+Response time:              0.43 secs
+Transaction rate:             152.44 trans/sec
+Throughput:                 0.00 MB/sec
+Concurrency:               65.78
+Successful transactions:        2000
+Failed transactions:               0
+Longest transaction:            1.24
+Shortest transaction:           0.07
+</pre>
+<p>Significant errors start appearing at three repeated requests per 1000 concurrent users:</p>
+<pre class="code bash literal-block">
+$ siege -c1000 -r3 -f urls.txt &gt; out.txt
+** SIEGE 4.0.2
+** Preparing <span class="literal number">1000</span> concurrent users <span class="keyword">for</span> battle.
+The server is now under siege...
+<span class="operator">[</span>error<span class="operator">]</span> socket: <span class="name builtin">read</span> error Connection reset by peer sock.c:539: Connection reset by peer
+<span class="operator">[</span>error<span class="operator">]</span> socket: <span class="name builtin">read</span> error Connection reset by peer sock.c:539: Connection reset by peer
+<span class="operator">[</span>error<span class="operator">]</span> socket: <span class="name builtin">read</span> error Connection reset by peer sock.c:539: Connection reset by peer
+...
+<span class="operator">[</span>error<span class="operator">]</span> socket: <span class="literal number">138964992</span> connection timed out.: Operation timed out
+
+Transactions:               <span class="literal number">2587</span> hits
+Availability:              86.23 %
+Elapsed time:              41.78 secs
+Data transferred:               0.01 MB
+Response time:              3.66 secs
+Transaction rate:              61.92 trans/sec
+Throughput:                 0.00 MB/sec
+Concurrency:              226.75
+Successful transactions:        2587
+Failed transactions:             413
+Longest transaction:           35.21
+Shortest transaction:           0.07
+</pre>
+</div>
+<div class="section" id="tests-with-alternative-servers">
+<h1>Tests With Alternative Servers</h1>
+<p>This section contains two additional tests to compare the performance for the simplest GET request of the Snowdonia implementation (using Flask, a minimalist synchronous web application framework) in this archive with an equally simple GET request using other web frameworks.</p>
+<p>The first other framework is an pure Python asynchronous web server, <tt class="docutils literal">aiohttp</tt>, see <a class="reference external" href="http://aiohttp.readthedocs.io/en/stable/web.html">http://aiohttp.readthedocs.io/en/stable/web.html</a>. The file <tt class="docutils literal">serve_aiohttp.py</tt> is basically a copy of this code, which you can run like this:</p>
+<pre class="code bash literal-block">
+$ ~/mc3/bin/python3 serve_aiohttp.py
+<span class="operator">========</span> Running on http://0.0.0.0:8080/ <span class="operator">========</span>
+<span class="operator">(</span>Press CTRL+C to quit<span class="operator">)</span>
+
+$ siege -c1000 -r10 <span class="literal string double">&quot;http://0.0.0.0:8080/&quot;</span> &gt; out.txt
+</pre>
+<p>Running the same GET test with <tt class="docutils literal">siege</tt> on it like at the end of the section <em>Local Test Results</em> above, shows a very similar performance:</p>
+<pre class="code bash literal-block">
+$ siege -c1000 -r1 <span class="literal string double">&quot;http://0.0.0.0:8080/&quot;</span> &gt; out.txt
+** SIEGE 4.0.2
+** Preparing <span class="literal number">1000</span> concurrent users <span class="keyword">for</span> battle.
+The server is now under siege...
+
+Transactions:               <span class="literal number">1000</span> hits
+Availability:             100.00 %
+Elapsed time:              12.60 secs
+Data transferred:               0.01 MB
+Response time:              0.00 secs
+Transaction rate:              79.37 trans/sec
+Throughput:                 0.00 MB/sec
+Concurrency:                0.14
+Successful transactions:        1000
+Failed transactions:               0
+Longest transaction:            0.11
+Shortest transaction:           0.00
+
+$ siege -c1000 -r10 <span class="literal string double">&quot;http://0.0.0.0:8080/&quot;</span> &gt; out.txt
+** SIEGE 4.0.2
+** Preparing <span class="literal number">1000</span> concurrent users <span class="keyword">for</span> battle.
+The server is now under siege...
+
+Transactions:              <span class="literal number">10000</span> hits
+Availability:             100.00 %
+Elapsed time:              12.89 secs
+Data transferred:               0.11 MB
+Response time:              0.02 secs
+Transaction rate:             775.80 trans/sec
+Throughput:                 0.01 MB/sec
+Concurrency:               14.76
+Successful transactions:       10000
+Failed transactions:               0
+Longest transaction:            0.16
+Shortest transaction:           0.00
+</pre>
+<p>A final comparison was conducted against an equally simple GET example running on <tt class="docutils literal">node.js</tt>, which on Mac OS X can be conveniently installed using <tt class="docutils literal">brew install node</tt>.</p>
+<pre class="code bash literal-block">
+$ node serve_mini.js
+Server listening on: http://localhost:8080
+
+$ siege -c1000 -r1 <span class="literal string double">&quot;http://0.0.0.0:8080/&quot;</span> &gt; out.txt
+** SIEGE 4.0.2
+** Preparing <span class="literal number">1000</span> concurrent users <span class="keyword">for</span> battle.
+The server is now under siege...
+
+Transactions:               <span class="literal number">1000</span> hits
+Availability:             100.00 %
+Elapsed time:              12.80 secs
+Data transferred:               0.02 MB
+Response time:              0.00 secs
+Transaction rate:              78.12 trans/sec
+Throughput:                 0.00 MB/sec
+Concurrency:                0.04
+Successful transactions:        1000
+Failed transactions:               0
+Longest transaction:            0.02
+Shortest transaction:           0.00
+
+$ siege -c1000 -r10 <span class="literal string double">&quot;http://0.0.0.0:8080/&quot;</span> &gt; out.txt
+** SIEGE 4.0.2
+** Preparing <span class="literal number">1000</span> concurrent users <span class="keyword">for</span> battle.
+The server is now under siege...
+
+Transactions:              <span class="literal number">10000</span> hits
+Availability:             100.00 %
+Elapsed time:              13.11 secs
+Data transferred:               0.21 MB
+Response time:              0.00 secs
+Transaction rate:             762.78 trans/sec
+Throughput:                 0.02 MB/sec
+Concurrency:                0.60
+Successful transactions:       10000
+Failed transactions:               0
+Longest transaction:            0.02
+Shortest transaction:           0.00
+</pre>
+<p>Increasing the number of repeated requests beyond 10 leads to a growing number of failed requests also in this case (results are skipped from this report).</p>
+</div>
+<div class="section" id="summary">
+<h1>Summary</h1>
+<p>The above findings suggest that the API endpoint implemented in this code can handle a load of 1000 concurrent requests without problems as desired, even repeated up to four times. When comparing the POST request with a simple GET request, the latter shows higher performance which is to be expected since there are no POST parameters to handle or save into a database.</p>
+<p>A remote instance of type <tt class="docutils literal">t2.micro</tt> starts showing errors at three repeated requests compared to five repeated requests on the local development machine. This might be largely due to the added network latency. For the remote tests on an AWS instance type <tt class="docutils literal">t2.micro</tt> the results were as satisfactory as those obtained on the local machine.</p>
+<p>It could be expected that choosing increasingly more powerful machines in the same series like <tt class="docutils literal">t2.small</tt>, <tt class="docutils literal">t2.medium</tt>,  <tt class="docutils literal">t2.large</tt> or even those of other series (<tt class="docutils literal"><span class="pre">x...</span></tt>) will result in even better performance. Only one more such test using the more performant instance type <tt class="docutils literal">t2.medium</tt> was conducted, but didn't improve the results significantly.</p>
+<p>Finally, a comparisson between the web application framework (Flask) selected for the Snowdonia code in this archive (although only the simplest possible GET request) with an asynchronous Python webserver as well as with Node.js (often recommended for asynchronous web servers) shows very similar performance results. It can be argued that this is because the example used for making these comparissons was &quot;too simple&quot; and lacking any possibility for asynchronous code to show any benefits. This could be verified only with more complex example code implemented multiple times for the respective framework, which is, of course, a more laborious task and, sadly, outside the reach of such a code challenge.</p>
+</div>
+</div>
+</body>
+</html>

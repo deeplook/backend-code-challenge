@@ -1,0 +1,1 @@
+http://localhost:5000/data POST uid=00000000-0000-0000-0000-000000000000&type=bus&timestamp=1472716308.602317&longitude=13.383333&lattitude=52.516667&heading=42

@@ -1,0 +1,629 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.12: http://docutils.sourceforge.net/" />
+<title>Manual</title>
+<style type="text/css">
+
+/*
+:Author: David Goodger (goodger@python.org)
+:Id: $Id: html4css1.css 7614 2013-02-21 15:55:51Z milde $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "! important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 ! important }
+
+.first {
+  /* Override more specific margin styles with "! important". */
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+object[type="image/svg+xml"], object[type="application/x-shockwave-flash"] {
+  overflow: hidden;
+}
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title, .code .error {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin: 0 0 0.5em 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left, .figure.align-left, object.align-left {
+  clear: left ;
+  float: left ;
+  margin-right: 1em }
+
+img.align-right, .figure.align-right, object.align-right {
+  clear: right ;
+  float: right ;
+  margin-left: 1em }
+
+img.align-center, .figure.align-center, object.align-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.align-left {
+  text-align: left }
+
+.align-center {
+  clear: both ;
+  text-align: center }
+
+.align-right {
+  text-align: right }
+
+/* reset inner alignment in figures */
+div.align-right {
+  text-align: inherit }
+
+/* div.align-center * { */
+/*   text-align: left } */
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font: inherit }
+
+pre.literal-block, pre.doctest-block, pre.math, pre.code {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+pre.code .ln { color: grey; } /* line numbers */
+pre.code, code { background-color: #eeeeee }
+pre.code .comment, code .comment { color: #5C6576 }
+pre.code .keyword, code .keyword { color: #3B0D06; font-weight: bold }
+pre.code .literal.string, code .literal.string { color: #0C5404 }
+pre.code .name.builtin, code .name.builtin { color: #352B84 }
+pre.code .deleted, code .deleted { background-color: #DEB0A1}
+pre.code .inserted, code .inserted { background-color: #A3D289}
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+/* "booktabs" style (no vertical lines) */
+table.docutils.booktabs {
+  border: 0px;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  border-collapse: collapse;
+}
+table.docutils.booktabs * {
+  border: 0px;
+}
+table.docutils.booktabs th {
+  border-bottom: thin solid;
+  text-align: left;
+}
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+ul.auto-toc {
+  list-style-type: none }
+
+</style>
+</head>
+<body>
+<div class="document" id="manual">
+<h1 class="title">Manual</h1>
+
+<p>This is a sample Python-based implementation of the <em>Snowdonia</em> backend code challenge as described in the file <tt class="docutils literal">CHALLENGE.md</tt> inside this archive. Basically, it's about implementing, deploying and testing a microservice with a simulation of 1000 vehicles, moving in the local area around a chosen city center, and posting their location data regularly to an API endpoint which stores them persistently for later usage.</p>
+<div class="figure align-center">
+<img alt="sample_trajectory.png" src="sample_trajectory.png" style="width: 90%;" />
+<p class="caption">Example randomized trajectory of a single vehicle (red), plus city center (blue), here: Berlin.</p>
+</div>
+<div class="section" id="implementation-overview">
+<h1>Implementation Overview</h1>
+<p>For the sake of simplicity (and easier validation on maps) all vehicles start at the same chosen city center (selected here without loss of generality to be the center of Berlin). They have a constant speed (selected randomly from a certain interval), and move in some randomized fashion (building circle-like patterns). They send their GPS data to the API endpoint (<tt class="docutils literal">POST /data</tt>) after a fixed 20 second time period if they are within a distance of up to 50 km to the given city center.</p>
+<p>The vehicles' data is stored in a single table of a SQLite3 database. Apart from the single API endpoint for posting data there is also a minimal &quot;front-end&quot; which allows to download the database content in CSV format and generate a map for the vehicles' trajectories. This is very helpful during development, but isn't strictly part of the challenge description. Therefore, it's also kept rather simplistic.</p>
+<p>The steps in the following sections can be followed one by one to get the system up and running.</p>
+</div>
+<div class="section" id="local-project-setup">
+<h1>Local Project Setup</h1>
+<p>First open the archive named snowdonia.tgz and change into the resulting directory like this:</p>
+<pre class="code bash literal-block">
+$ tar xfz snowdonia.tgz
+$ <span class="name builtin">cd</span> snowdonia
+</pre>
+<p>All further commands should be executed from this directory, unless some reason is given for doing it otherwise.</p>
+<div class="section" id="install-python">
+<h2>Install Python</h2>
+<p>Install a Python3 distribution named Miniconda, shown here for Mac OS X. For other platforms see <a class="reference external" href="http://conda.pydata.org/miniconda.html">http://conda.pydata.org/miniconda.html</a>.</p>
+<pre class="code bash literal-block">
+$ curl -O https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
+$ bash Miniconda3-latest-MacOSX-x86_64.sh -b -f -p ~/mc3
+$ rm Miniconda3-latest-MacOSX-x86_64.sh
+$ ~/mc3/bin/conda install basemap
+$ ~/mc3/bin/pip install -r requirements.txt
+$ ~/mc3/bin/pip install boto3
+</pre>
+<p>Since for the real deployments a tool named Fabric will be used (instead of heavier tools like Ansible or Saltstack), which is still not fully migrated to Python3, you need to install a version of Miniconda for Python2 as well:</p>
+<pre class="code bash literal-block">
+$ curl -O https://repo.continuum.io/miniconda/Miniconda2-latest-MacOSX-x86_64.sh
+$ bash Miniconda2-latest-MacOSX-x86_64.sh -b -f -p ~/mc2
+$ rm Miniconda2-latest-MacOSX-x86_64.sh
+$ ~/mc2/bin/pip install fabric
+</pre>
+</div>
+<div class="section" id="configuration">
+<h2>Configuration</h2>
+<p>The destination platform for this project is an AWS EC2 server. If you want to replicate the deployment process the following assumptions are made: you have an AWS account with an IAM user. To run any deployments from a local machine you must have these two files, <tt class="docutils literal"><span class="pre">~/.aws/credentials</span></tt> and <tt class="docutils literal">cat <span class="pre">~/.aws/config</span></tt>, that contain valid values for your AWS keys and an EC2 region name (below preselected as <tt class="docutils literal"><span class="pre">eu-central-1</span></tt>):</p>
+<pre class="code bash literal-block">
+$ cat ~/.aws/credentials
+<span class="operator">[</span>default<span class="operator">]</span>
+<span class="name variable">aws_access_key_id</span> <span class="operator">=</span> &lt;REPLACE-WITH-YOUR-OWN&gt;
+<span class="name variable">aws_secret_access_key</span> <span class="operator">=</span> &lt;REPLACE-WITH-YOUR-OWN&gt;
+
+$ cat ~/.aws/config
+<span class="operator">[</span>default<span class="operator">]</span>
+<span class="name variable">region</span> <span class="operator">=</span> eu-central-1
+</pre>
+<p>Another config file inside the unpacked archive, named <tt class="docutils literal">config.ini</tt>, contains additional configuration options that you <em>can</em> change, but don't have too. Two fields in its AWS section, <tt class="docutils literal">instance_id</tt> and <tt class="docutils literal">instance_ip</tt>, will be updated dynamically during the deployment process as you create a new instance for deployments.</p>
+<pre class="code bash literal-block">
+$ cat config.ini
+<span class="operator">[</span>AWS<span class="operator">]</span>
+<span class="name variable">image_id</span> <span class="operator">=</span> ami-02724d1f
+<span class="name variable">instance_type</span> <span class="operator">=</span> t2.micro
+<span class="name variable">instance_tag</span> <span class="operator">=</span> Context:snowdonia
+<span class="name variable">keypair_name</span> <span class="operator">=</span> snowdonia
+<span class="name variable">secgroup_name</span> <span class="operator">=</span> snowdonia
+<span class="name variable">instance_user</span> <span class="operator">=</span> admin
+<span class="name variable">instance_id</span> <span class="operator">=</span>
+<span class="name variable">instance_ip</span> <span class="operator">=</span>
+
+<span class="operator">[</span>SERVICE<span class="operator">]</span>
+<span class="name variable">debug</span> <span class="operator">=</span> True
+<span class="name variable">port</span> <span class="operator">=</span> 5000
+<span class="name variable">endpoint</span> <span class="operator">=</span> /data
+<span class="name variable">database</span> <span class="operator">=</span> snowdonia.db
+</pre>
+</div>
+</div>
+<div class="section" id="create-a-database">
+<h1>Create a Database</h1>
+<p>This archive contains a sample SQLite3 database in <tt class="docutils literal">snowdonia.db</tt>. You can leave it as-is, but you can also create a new empty database from scratch using <tt class="docutils literal">database.py</tt> as shown below:</p>
+<pre class="code bash literal-block">
+$ ~/mc3/bin/python3 database.py
+Usage: database.py create <span class="punctuation">|</span> dump_sql <span class="punctuation">|</span> dump_csv <span class="punctuation">|</span> delete
+
+$ ~/mc3/bin/python3 database.py delete
+
+$ ~/mc3/bin/python3 database.py create
+
+$ ~/mc3/bin/python3 database.py dump_sql
+BEGIN TRANSACTION<span class="punctuation">;</span>
+CREATE TABLE traffic <span class="operator">(</span>
+                uid text,
+                <span class="name builtin">type</span> text,
+                timestamp real,
+                longitude real,
+                lattitude real,
+                heading real
+            <span class="operator">)</span><span class="punctuation">;</span>
+COMMIT<span class="punctuation">;</span>
+
+$ ~/mc3/bin/python3 database.py dump_csv
+,uid,type,timestamp,longitude,lattitude,heading
+</pre>
+<p>You can populate this database, adding randomized data using <tt class="docutils literal">simulate.py</tt>.</p>
+<pre class="code bash literal-block">
+$ ~/mc3/bin/python3 simulate.py -h
+usage: simulate.py <span class="operator">[</span>-h<span class="operator">]</span> <span class="operator">[</span>--live<span class="operator">]</span> <span class="operator">[</span>--store MODE<span class="operator">]</span> num dur
+
+Simulate vehicles moving and sending data.
+
+positional arguments:
+  num           Number of vehicles to create.
+  dur           Duration in seconds to run the simulation.
+
+optional arguments:
+  -h, --help    show this <span class="name builtin">help</span> message and <span class="name builtin">exit</span>
+  --live        Run in real-time mode <span class="operator">(</span>waiting <span class="keyword">for</span> <span class="name builtin">time</span> to pass<span class="operator">)</span>
+  --store MODE  Data storage mode, either <span class="literal string double">&quot;database&quot;</span> <span class="operator">(</span>default<span class="operator">)</span> or <span class="literal string double">&quot;api&quot;</span>.
+</pre>
+<p>Run this to add trajectories for two vehicles and 40 seconds directly into the database. The output shows two vehicles in their start states and, after a blank line, additional states after moving to their next locations. The columns are: UID, Timestamp, Lattitude, Longitude and Heading:</p>
+<pre class="code bash literal-block">
+$ ~/mc3/bin/python3 simulate.py --store database <span class="literal number">2</span> 40
+44391310-212c-4bc3-b31d-68bb71033be7 1473009221.873277 52.516667 13.383333 84.47983062861165
+e7698142-3a16-4a58-a7f4-44d9aeab663d 1473009221.873366 52.516667 13.383333 223.81197720171508
+
+44391310-212c-4bc3-b31d-68bb71033be7 1473009241.873277 52.516772644306116 13.385125096966247 88.77983062861165
+44391310-212c-4bc3-b31d-68bb71033be7 1473009261.873277 52.516796019466554 13.386925136392584 84.37983062861164
+e7698142-3a16-4a58-a7f4-44d9aeab663d 1473009241.873366 52.51544206823732 13.381406744095392 233.6119772017151
+e7698142-3a16-4a58-a7f4-44d9aeab663d 1473009261.873366 52.51443502552337 13.379166893952485 242.4119772017151
+</pre>
+<p>Now you can have a look at the database:</p>
+<pre class="code bash literal-block">
+$ ~/mc3/bin/python3 database.py dump_csv
+,uid,type,timestamp,longitude,lattitude,heading
+0,44391310-212c-4bc3-b31d-68bb71033be7,car,1473009241.873277,13.385125096966247,52.516772644306116,88.77983062861165
+1,44391310-212c-4bc3-b31d-68bb71033be7,car,1473009261.873277,13.386925136392584,52.516796019466554,84.37983062861164
+2,e7698142-3a16-4a58-a7f4-44d9aeab663d,car,1473009241.873366,13.381406744095392,52.51544206823732,233.6119772017151
+3,e7698142-3a16-4a58-a7f4-44d9aeab663d,car,1473009261.873366,13.379166893952485,52.51443502552337,242.4119772017151
+</pre>
+<p>If you use the <tt class="docutils literal"><span class="pre">--live</span></tt> flag the data is saved in &quot;real-time&quot; as it would be created by the simulated vehicles (which can take a while). This is implemented using asynchronous coroutines, which is not strictly necessary. Threads would do here as well, but this was something like a little challenge inside the real challenge.</p>
+<p>If you use the <tt class="docutils literal"><span class="pre">--mode</span> api</tt> option the data is posted to the database via the API endpoint of the microservice implemented in this code challenge. But first, the microservice needs to be started, as shown in the next section.</p>
+</div>
+<div class="section" id="run-a-local-server">
+<h1>Run a Local Server</h1>
+<p>Running a local server simply means executing the command <tt class="docutils literal">python3 serve.py</tt>:</p>
+<pre class="code bash literal-block">
+$ ~/mc3/bin/python3 serve.py
+ * Running on http://0.0.0.0:5000/ <span class="operator">(</span>Press CTRL+C to quit<span class="operator">)</span>
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger pin code: 227-187-639
+</pre>
+<p>Then you can open your favourite webbrowser and enter some of the following addresses. Make sure you adapt the port number or vehicle UID if you change the configuration or create your own vehicles:</p>
+<blockquote>
+<ul class="simple">
+<li><a class="reference external" href="http://0.0.0.0:5000/">http://0.0.0.0:5000/</a></li>
+<li><a class="reference external" href="http://0.0.0.0:5000/data.csv">http://0.0.0.0:5000/data.csv</a></li>
+<li><a class="reference external" href="http://0.0.0.0:5000/data.csv?uid=44391310-212c-4bc3-b31d-68bb71033be7">http://0.0.0.0:5000/data.csv?uid=44391310-212c-4bc3-b31d-68bb71033be7</a></li>
+<li><a class="reference external" href="http://0.0.0.0:5000/data.csv?type=bus&amp;duration=PT1H">http://0.0.0.0:5000/data.csv?type=bus&amp;duration=PT1H</a></li>
+</ul>
+</blockquote>
+<p>The vehicle <tt class="docutils literal">type</tt> filter can be used to show only some type of vehicles (here: bus, taxi, train, tram). And the <tt class="docutils literal">duration</tt> filter can be used to show vehicle locations taken with timestamps between now and the given duration back in time. Durations must be given in ISO 8601 format, see <a class="reference external" href="https://en.wikipedia.org/wiki/ISO_8601#Durations">https://en.wikipedia.org/wiki/ISO_8601#Durations</a>. &quot;PT1H&quot; means one hour. The returned CSV file will be the same like the one returned by the command <tt class="docutils literal">python3 database.py dump_csv</tt>.</p>
+<p>If the server is running you can also add other vehicle entries via the dedicated POST API endpoint when using <tt class="docutils literal">simulate.py</tt> from the command-line. In this case the vehicles added are of type &quot;tram&quot; and are added in real-time, so the simulation does actually take 40 seconds:</p>
+<pre class="code bash literal-block">
+$ ~/mc3/bin/python3 simulate.py --store api --type tram --live <span class="literal number">2</span> 40
+2fa74786-ccc7-4673-9fbb-34a1f147c02d 1473013327.619334 52.516667 13.383333 306.85073628462925
+56dc239a-57d7-4bf9-9ba6-8c5dd8c17ebe 1473013327.61942 52.516667 13.383333 212.5634918116318
+
+56dc239a-57d7-4bf9-9ba6-8c5dd8c17ebe 1473013347.625095 52.51477352263088 13.381350918876912 214.9634918116318
+2fa74786-ccc7-4673-9fbb-34a1f147c02d 1473013347.652002 52.51813410833846 13.380124027631766 307.4507362846293
+56dc239a-57d7-4bf9-9ba6-8c5dd8c17ebe 1473013367.657075 52.512932340202866 13.379240697238707 214.1634918116318
+2fa74786-ccc7-4673-9fbb-34a1f147c02d 1473013367.670516 52.51962163574963 13.376940308884501 312.65073628462926
+</pre>
+</div>
+<div class="section" id="test-on-a-local-server">
+<h1>Test on a Local Server</h1>
+<p>For this challenge testing does not include the usual unit-testing, but means &quot;only&quot; testing the performance of the API endpoint for posting location data. The document named <tt class="docutils literal">testing.rst</tt> describes using a dedicated tool to conduct this kind of performance tests in a systematic and reproducible way.</p>
+<p>The following example shows only a very simple way to do this kind of testing during development using a tool like <tt class="docutils literal">curl</tt> (the tested endpoint returns the plain text &quot;saved&quot;, if successful):</p>
+<pre class="code bash literal-block">
+$ curl -X POST <span class="literal string double">&quot;http://localhost:5000/data&quot;</span> --data <span class="literal string double">&quot;uid=76b1b23a-9763-41e8-9727-a63955cb5daf&amp;type=bus&amp;timestamp=1472716308.602317&amp;longitude=13.383333&amp;lattitude=52.516667&amp;heading=123&quot;</span>
+saved
+</pre>
+</div>
+<div class="section" id="deployment">
+<h1>Deployment</h1>
+<p>Deployments are performed on temporary remote AWS EC2 instances. These can be managed using the <tt class="docutils literal">remote.py</tt> intended to create, list and delete an instance and its security group and keypair file. The following interaction shows a full cycle from creating to deleting such a remote instance.</p>
+<p>This tool tries to be idempotent when performing its actions, but there might be little issues to solve, especially about timing (when waiting for an instance to be fully ready or terminated). So in these cases, but also in general, it makes a lot of sense to watch your AWS management console to verify what is going on and, mabye, perform some action manually, if really needed.</p>
+<pre class="code bash literal-block">
+$ ~/mc3/bin/python3 remote.py create
+created AWS key pair named <span class="literal string double">&quot;snowdonia&quot;</span>
+created file <span class="literal string double">&quot;snowdonia.pem&quot;</span>
+chmod to <span class="literal number">400</span> <span class="keyword">for</span> file <span class="literal string double">&quot;snowdonia.pem&quot;</span>
+found my public IP: <span class="literal string double">&quot;77.179.222.43&quot;</span>
+created security group named <span class="literal string double">&quot;snowdonia&quot;</span>
+created inbound access rules <span class="keyword">for</span> security group named <span class="literal string double">&quot;snowdonia&quot;</span>
+created instance with id <span class="literal string double">&quot;i-3fdc8583&quot;</span>
+tagged instance <span class="literal string double">&quot;i-3fdc8583&quot;</span> with tag <span class="literal string double">&quot;{'Key': 'Context', 'Value': 'snowdonia'}&quot;</span>
+instance <span class="literal string double">&quot;i-3fdc8583&quot;</span> has public IP <span class="literal string double">&quot;52.28.92.85&quot;</span>
+created instance has public IP: 52.28.92.85
+
+$ ~/mc3/bin/python3 remote.py list
+found AWS key pair named <span class="literal string double">&quot;snowdonia&quot;</span>
+found AWS security group named <span class="literal string double">&quot;snowdonia&quot;</span>
+found instance i-3fdc8583 t2.micro
+instance <span class="literal string double">&quot;i-3fdc8583&quot;</span> has public IP <span class="literal string double">&quot;52.28.92.85&quot;</span>
+instance has public IP: 52.28.92.85
+use this <span class="name builtin">command</span> to login via ssh: ssh -i snowdonia.pem admin&#64;52.28.92.85
+
+$ ~/mc3/bin/python3 remote.py delete <span class="comment single"># might be slightly buggy</span>
+</pre>
+<p>With the <tt class="docutils literal">ssh</tt> command listed by <tt class="docutils literal">python3 remote.py list</tt> you can connect to the fresh instance and do whatever you like, but the idea is, of course, to provision it automatically, deploy the microservice on it, and run it from your local development machine.</p>
+<p>As mentioned above this is done with Fabric are done using Python2. After installing Fabric (shown above in section <em>Install Python</em>), you have a tool named <tt class="docutils literal">fab</tt> which operates on the local file named <tt class="docutils literal">fabfile.py</tt> which contains deployment functions:</p>
+<pre class="code bash literal-block">
+$ ~/mc2/bin/fab -l
+
+This is used <span class="keyword">for</span> server provisioning, deploying and starting the service.
+
+Provisioning is <span class="keyword">done</span> in this <span class="keyword">case</span> to some AWS EC2 server. And deployment
+consists of copying a <span class="name builtin">local</span> development folder to the remote server.
+
+This uses Fabric, since it is simpler than Ansible or Saltstack. Notice
+that Fabric currently is still recommended to be used on Python 2! You
+can install Fabric with <span class="literal string backtick">``</span>pip install fabric<span class="literal string backtick">``</span>.
+
+Examples:
+
+    fab -l
+    fab -h
+    fab -i snowdonia.pem -u admin -H 52.57.6.142 provision
+    fab -R aws provision
+
+Available commands:
+
+    dependencies  Install dependencies on remote server.
+    deploy        Deploy code to remote server.
+    provision     Provision remote server.
+    serve         Run remote service <span class="operator">(</span><span class="keyword">until</span> you quit this command!<span class="operator">)</span>.
+</pre>
+<p>You can find out more about <tt class="docutils literal">fab</tt> by calling <tt class="docutils literal">fab <span class="pre">-h</span></tt>. To fully prepare an instance with all code needed (including the Python microservice implementation for this challenge) you can run this sequence, using <tt class="docutils literal"><span class="pre">-R</span> aws</tt> (R for role) for automatically picking the correct public IP of your instance from <tt class="docutils literal">config.ini</tt> and run commands over <tt class="docutils literal">ssh</tt> (output removed for brevity):</p>
+<pre class="code bash literal-block">
+$ ~/mc2/bin/fab -R aws provision
+...
+
+$ ~/mc2/bin/fab -R aws dependencies
+...
+
+$ ~/mc2/bin/fab -R aws deploy
+...
+</pre>
+<p>To start the service on the remote instance you can execute the following command:</p>
+<pre class="code bash literal-block">
+$ ~/mc2/bin/fab -R aws serve
+<span class="operator">[</span>admin&#64;52.57.27.69<span class="operator">]</span> Executing task <span class="literal string single">'serve'</span>
+** When this is ready you can open http://52.57.27.69:5000/ in a webbrowser!
+<span class="operator">[</span>admin&#64;52.57.27.69<span class="operator">]</span> run: /home/admin/miniconda3/bin/python serve.py
+<span class="operator">[</span>admin&#64;52.57.27.69<span class="operator">]</span> out:  * Running on http://0.0.0.0:5000/ <span class="operator">(</span>Press CTRL+C to quit<span class="operator">)</span>
+<span class="operator">[</span>admin&#64;52.57.27.69<span class="operator">]</span> out:  * Restarting with stat
+<span class="operator">[</span>admin&#64;52.57.27.69<span class="operator">]</span> out:  * Debugger is active!
+<span class="operator">[</span>admin&#64;52.57.27.69<span class="operator">]</span> out:  * Debugger pin code: 151-953-816
+<span class="operator">[</span>admin&#64;52.57.27.69<span class="operator">]</span> out:
+</pre>
+<p>Notice the hint on the URL to open in a webbrowser to verify that your service is running (your instance IP will be, very likely, a different one)!</p>
+</div>
+<div class="section" id="test-on-a-remote-server">
+<h1>Test on a Remote Server</h1>
+<p>Again, you can post a vehicle location to the dedicated API endpoint, now on the remote server, and you will get the same &quot;saved&quot; response if everything works as expected. The following shows this with a slightly funky UID:</p>
+<pre class="code bash literal-block">
+$ curl -X POST <span class="literal string double">&quot;http://52.57.27.69:5000/data&quot;</span> --data <span class="literal string double">&quot;uid=11111111-1111-1111-1111-111111111111&amp;type=bus&amp;timestamp=1472716308.602317&amp;longitude=13.383333&amp;lattitude=52.516667&amp;heading=42&quot;</span>
+saved
+
+$ curl -X GET <span class="literal string double">&quot;http://52.57.27.69:5000/data.csv?uid=11111111-1111-1111-1111-111111111111&quot;</span>
+,uid,type,timestamp,longitude,lattitude,heading
+0,11111111-1111-1111-1111-111111111111,bus,1472716308.602317,13.383333,52.516667,42.0
+</pre>
+<p>The document named <tt class="docutils literal">testing.rst</tt> describes many more detailed tests conducted via a dedicated tool.</p>
+</div>
+<div class="section" id="maps">
+<h1>Maps</h1>
+<p>When developping this code it was very helpful to be able to &quot;see&quot; a visual representation of the whole set of vehicles and their movements across some territory. Therefore there is an endpoint to generate maps showing the location of the vehicles in the database (see figure below). You can also provide a UID as a query parameter to plot the trajectory of only that one vehicle with this UID:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://0.0.0.0:5000/map/traffic">http://0.0.0.0:5000/map/traffic</a></li>
+<li><a class="reference external" href="http://0.0.0.0:5000/map/traffic">http://0.0.0.0:5000/map/traffic</a>?uid=&lt;UID&gt;</li>
+</ul>
+<div class="figure align-center">
+<img alt="all_trajectories.png" src="all_trajectories.png" style="width: 90%;" />
+<p class="caption">All trajectories (red) in a fresh database with 10 vehicles moving for 10 minutes from the city center (blue).</p>
+</div>
+</div>
+</div>
+</body>
+</html>

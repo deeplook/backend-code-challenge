@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Snowdonia Traffic</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}"/>
+</head>
+<body>
+<div class="container">
+    <div class="page-header">
+        <h1>Snowdonia Traffic</h1>
+    </div>
+    {% block content %}
+ 
+    {% endblock %}
+    <hr/>
+    <div class="modal-footer">
+        <h4>&copy; deeplook</h4>
+    </div>
+</div>
+</body>
+</html>
